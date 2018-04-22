@@ -15,7 +15,6 @@ cache:
   - npm
 script:
     - npm i -g yarn
-    - !npm ci || yarn ci
     - npm install codecov -g
 after_success:
     - codecov
