@@ -3,4 +3,4 @@ dependencies:
     - yarn install --ignore-scripts
 machine:
   node:
-    version: v6.10.2
+    version: latest

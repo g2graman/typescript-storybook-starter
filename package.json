@@ -1,49 +1,45 @@
 {
   "name": "typescript-storyshots",
-  "version": "1.0.0",
-  "description": "Sample project using StoryShots, Jest and TypeScript",
+  "version": "0.0.1",
+  "description": "Sample starter using StoryShots, Jest and TypeScript",
   "main": "lib/src/index.js",
   "typings": "lib/src/index.d.ts",
   "scripts": {
     "compile": "tsc",
     "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "npx start-storybook -p 6006 -c .storybook",
+    "build-storybook": "npx build-storybook"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xogeny/typescript-storyshots.git"
+    "url": "git+https://github.com/g2graman/typescript-storyshots.git"
   },
-  "keywords": [
-    "Jest",
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
-  "author": "Michael M. Tiller",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xogeny/typescript-storyshots/issues"
+    "url": "https://github.com/g2graman/typescript-storyshots/issues"
   },
-  "homepage": "https://github.com/xogeny/typescript-storyshots#readme",
+  "homepage": "https://github.com/g2graman/typescript-storyshots",
   "dependencies": {
-    "react": "^15.6.1"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.2.8",
-    "@storybook/react": "^3.2.8",
-    "@types/jest": "^20.0.2",
-    "@types/react": "^15.0.33",
-    "@types/react-dom": "^15.5.1",
-    "@types/react-test-renderer": "^15.5.1",
+    "@storybook/addons": "^3.4.2",
+    "@storybook/react": "^3.4.2",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.6",
+    "@types/react": "^16.3.2",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-test-renderer": "^16.0.1",
     "@types/storybook__react": "^3.0.1",
-    "awesome-typescript-loader": "^3.2.1",
-    "jest": "^20.0.4",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1",
-    "ts-jest": "^20.0.6",
-    "typescript": "^2.4.1"
+    "babel-core": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.2",
+    "ts-jest": "^22.4.4",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.8.3"
   },
   "jest": {
     "transform": {
