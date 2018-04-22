@@ -3,4 +3,4 @@ dependencies:
     - yarn install --ignore-scripts
 machine:
   node:
-    version: latest
+    version: lts/carbon

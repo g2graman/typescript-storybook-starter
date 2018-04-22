@@ -6,9 +6,12 @@
   "typings": "lib/src/index.d.ts",
   "scripts": {
     "compile": "tsc",
-    "test": "jest",
-    "storybook": "npx start-storybook -p 6006 -c .storybook",
-    "build-storybook": "npx build-storybook"
+    "test": "npx jest --no-cache --coverage",
+    "storybook": "npm run storybook:start",
+    "storybook:start": "npx start-storybook -p 6006 -c .storybook",
+    "storybook:build": "npx build-storybook -s storybook-static -o .out",
+    "storybook:deploy": "npx storybook-to-ghpages",
+    "deploy": "npm run storybook:build && npm run storybook:deploy"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
     "@storybook/addon-storyshots": "^3.2.8",
     "@storybook/addons": "^3.4.2",
     "@storybook/react": "^3.4.2",
+    "@storybook/storybook-deployer": "^2.3.0",
     "@types/jest": "^22.2.3",
     "@types/node": "^9.6.6",
     "@types/react": "^16.3.2",

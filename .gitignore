@@ -1,5 +1,7 @@
 node_modules/
 *.log
 
+coverage/
+.out/
 .idea/
 storybook-static/

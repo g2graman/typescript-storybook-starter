@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "8"
+  - "9"
+matrix:
+  fast_finish: true
+  allow_failures:
+    - node_js: "9"
+    - os: osx
+os:
+  - linux
+  - osx
+cache:
+  - yarn
+  - npm
+script:
+    - npm i -g yarn
+    - !npm ci || yarn ci
+    - npm install codecov -g
+after_success:
+    - codecov
