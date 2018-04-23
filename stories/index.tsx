@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { SampleWidget } from '../src';
+import { storiesOf } from "@storybook/react";
+import * as React from "react";
 
-import { storiesOf } from '@storybook/react';
+import { SampleWidget } from "../src/components/widget";
 
-storiesOf("TypeScript and Storybook", module)
-  .add('Sample Widget', () => <SampleWidget name="Michael" />);
+storiesOf("SampleWidget", module)
+    .add("SampleWidget", () => <SampleWidget name="Michael" />);

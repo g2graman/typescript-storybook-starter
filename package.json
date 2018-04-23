@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/g2graman/typescript-storyshots",
   "dependencies": {
+    "@storybook/react": "^3.4.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "@storybook/addon-storyshots": "^3.2.8",
+    "@storybook/addon-storyshots": "^3.4.2",
     "@storybook/addons": "^3.4.2",
-    "@storybook/react": "^3.4.2",
     "@storybook/storybook-deployer": "^2.3.0",
     "@types/jest": "^22.2.3",
     "@types/node": "^9.6.6",
@@ -39,16 +39,39 @@
     "@types/storybook__react": "^3.0.1",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "husky": "^1.0.0-rc.2",
     "jest": "^22.4.3",
+    "lodash.map": "^4.6.0",
+    "lodash.mapvalues": "^4.6.0",
     "react-test-renderer": "^16.3.2",
+    "require-dir": "^1.0.0",
     "ts-jest": "^22.4.4",
     "ts-loader": "^3.5.0",
-    "typescript": "^2.8.3"
+    "tslint": "^5.9.1",
+    "tslint-react": "^3.5.1",
+    "typescript": "^2.8.3",
+    "webpack": "^3.11.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npx tslint --fix",
+      "git add"
+    ]
   },
   "jest": {
+    "verbose": true,
     "transform": {
-      "\\.(jsx?|tsx?)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.[jt]sx?$": "<rootDir>/node_modules/ts-jest/dist/preprocessor.js"
     },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/lib/"
