@@ -24,8 +24,16 @@
   "homepage": "https://github.com/g2graman/typescript-storyshots",
   "dependencies": {
     "@storybook/react": "^3.4.2",
+    "csx": "^8.5.0",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "typestyle": "^1.7.2"
   },
   "devDependencies": {
     "@storybook/addon-storyshots": "^3.4.2",
@@ -36,12 +44,12 @@
     "@types/react": "^16.3.2",
     "@types/react-dom": "^16.0.5",
     "@types/react-test-renderer": "^16.0.1",
+    "@types/redux-logger": "^3.0.6",
     "@types/storybook__react": "^3.0.1",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "husky": "^1.0.0-rc.2",
     "jest": "^22.4.3",
-    "lodash.map": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
     "react-test-renderer": "^16.3.2",
     "require-dir": "^1.0.0",

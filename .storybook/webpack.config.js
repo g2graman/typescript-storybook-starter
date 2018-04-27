@@ -1,6 +1,6 @@
 module.exports = (baseConfig, env, defaultWebpackConfig) => {
     defaultWebpackConfig.module.rules.push({
-        test: /\.(ts|tsx)$/,
+        test: /\.(tsx?)$/,
         loader: require.resolve('ts-loader')
     });
 

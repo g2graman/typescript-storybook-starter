@@ -1,1 +1,1 @@
-export * from "./components/widget";
+export * from "./components/widget/widget";
