@@ -1,3 +1,3 @@
-import { IDoSomething } from "./action";
+import { IDoSomething } from "./doSomething";
 
 export type ActionType = IDoSomething;

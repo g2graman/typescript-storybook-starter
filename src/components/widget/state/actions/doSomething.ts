@@ -7,7 +7,7 @@ export interface IDoSomething {
     payload: DoSomethingPayload;
 }
 
-export const createAction = (payload: DoSomethingPayload): IDoSomething => ({
+export const createAction = (payload?: DoSomethingPayload): IDoSomething => ({
     payload,
     type: DO_SOMETHING_TOKEN as typeof DO_SOMETHING_TOKEN,
 });

@@ -1,5 +1,5 @@
 {
-  "name": "typescript-storyshots",
+  "name": "typescript-storybook-starter",
   "version": "0.0.1",
   "description": "Sample starter using StoryShots, Jest and TypeScript",
   "main": "lib/src/index.js",
@@ -53,6 +53,7 @@
     "lodash.mapvalues": "^4.6.0",
     "react-test-renderer": "^16.3.2",
     "require-dir": "^1.0.0",
+    "storybook-addon-jsx": "^5.3.0",
     "ts-jest": "^22.4.4",
     "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",

@@ -3,7 +3,7 @@ import { Reducer } from "redux";
 import { IReducerMap } from "../../../declarations";
 
 import { ActionType as GenericActionType } from "./actions";
-import { DO_SOMETHING_TOKEN/*, IDoSomething*/ } from "./actions/action";
+import { DO_SOMETHING_TOKEN/*, IDoSomething*/ } from "./actions/doSomething";
 
 export type ActionReducerMap = IReducerMap<{}>;
 
