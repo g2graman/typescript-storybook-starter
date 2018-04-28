@@ -1,10 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Say my name, say my name... 1`] = `
-<div>
-  <h1>
-    Hello 
-    Michael
-  </h1>
+<div
+  className={undefined}
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    onClick={[Function]}
+    style={
+      Object {
+        "cursor": "pointer",
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  >
+    <svg
+      height={0}
+      width={0}
+    >
+      <defs>
+        <linearGradient
+          gradientTransform={undefined}
+          id="PinkRed"
+          x1="0"
+          x2="0"
+          y1="0"
+          y2="1"
+        >
+          <stop
+            offset="0%"
+            stopColor="#F54EA2"
+            stopOpacity={1}
+          />
+          <stop
+            offset="100%"
+            stopColor="#FF7676"
+            stopOpacity={1}
+          />
+        </linearGradient>
+      </defs>
+      <g>
+        <g>
+          <path
+            className="vx-area-closed"
+            d="M0,0L0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0L0,0L0,0L0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0C0,0,0,0,0,0L0,0Z"
+            fill="url(#PinkRed)"
+            stroke="url(#PinkRed)"
+            strokeDasharray={undefined}
+            strokeWidth={2}
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
 </div>
 `;

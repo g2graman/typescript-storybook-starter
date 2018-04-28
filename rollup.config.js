@@ -32,6 +32,20 @@ const plugins = [
                 'Component',
                 'createElement',
             ],
+            'node_modules/@vx/mock-data/build/index.js': [
+                'genDateValue'
+            ], 'node_modules/@vx/shape/build/index.js': [
+                'AreaClosed'
+            ], 'node_modules/@vx/curve/build/index.js': [
+                'curveBasis'
+            ], 'node_modules/@vx/scale/build/index.js': [
+                'scaleTime',
+                'scaleLinear'
+            ], 'node_modules/@vx/gradient/build/index.js': [
+                'GradientPinkRed'
+            ], 'node_modules/@vx/responsive/build/index.js': [
+                'ParentSize'
+            ]
         },
     }),
     typescriptPlugin({
