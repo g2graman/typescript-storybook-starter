@@ -2,6 +2,7 @@ node_modules/
 *.log
 
 coverage/
+build/
 .out/
 .idea/
 storybook-static/

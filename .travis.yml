@@ -11,10 +11,13 @@ os:
   - linux
   - osx
 cache:
-  - yarn
   - npm
 script:
-    - npm i -g yarn
-    - npm install codecov -g
-after_success:
-    - codecov
+    - npm i
+    - npm run test
+    - npm run build
+addons:
+  artifacts:
+    target_paths:
+    - coverage
+    - build
