@@ -12,20 +12,28 @@ import { Spring } from "react-spring";
 
 // import { createAction } from "./state/actions/doSomething";
 
-const graphData = genDateValue(20);
-const x = (d) => d.date;
-const y = (d) => d.value;
+interface IPoint {
+    date: Date;
+    value: any;
+}
+
+const graphData: IPoint[] = genDateValue(20);
+
+const gradientId = "PinkRed";
+
+const getXValue = (point: IPoint) => point.date;
+const getYValue = (point: IPoint) => point.value;
 
 const Graph = ({ interpolate, data, xScale, yScale }: any) => (
     <AreaClosed
         data={data.map((d, i) => ({ ...d, value: interpolate[i] }))}
         xScale={xScale}
         yScale={yScale}
-        x={x}
-        y={y}
+        x={getXValue}
+        y={getYValue}
         strokeWidth={2}
-        stroke={"url(#PinkRed)"}
-        fill={"url(#PinkRed)"}
+        stroke={`url(#${gradientId})`}
+        fill={`url(#${gradientId})`}
         curve={curveBasis}
     />
 );
@@ -45,17 +53,37 @@ class SampleWidget extends React.Component<ISampleWidgetProps, ISampleWidgetStat
     public state = { toggle: true };
     public toggle = () => this.setState((state) => ({ toggle: !state.toggle }));
 
+    public getMaxValue = (data) => max(data, getYValue);
+    public getYScale = (height, maxYValue: any) => scaleLinear({
+        domain: [0, maxYValue],
+        nice: true,
+        range: [height, 0],
+    })
+
+    public interpolateValuesToScale = (data: IPoint[], maxYValue: any) =>
+        data.map((d) => Math.random() * maxYValue)
+
+    public getGraphExtras = (data: IPoint[], xScale, yScale) => ({
+        data,
+        xScale,
+        yScale,
+    })
+
     public renderGraph = ({ width, height }) => {
-        const xScale = scaleTime({ range: [0, width], domain: extent(graphData, x) });
-        const yMax: any = max(graphData, y);
-        const yScale = scaleLinear({ range: [height, 0], domain: [0, yMax], nice: true });
-        const interpolate = graphData.map((d) => Math.random() * yMax);
-        const extra = { data: graphData, xScale, yScale };
+        const xScale = scaleTime({
+            domain: extent(graphData, getXValue),
+            range: [0, width],
+        });
+
+        const yMax: any = this.getMaxValue(graphData);
+        const yScale = this.getYScale(height, yMax);
+        const interpolate = this.interpolateValuesToScale(graphData, yMax);
+        const extra = this.getGraphExtras(graphData, xScale, yScale);
 
         return (
             <div style={{ width: "100%", height: "100vh", cursor: "pointer" }} onClick={this.toggle}>
                 <svg width={width} height={height}>
-                    <GradientPinkRed id="PinkRed" />
+                    <GradientPinkRed id={`${gradientId}`} />
                     <g>
                         <Spring to={{ interpolate }} {...extra} children={Graph} />
                     </g>
