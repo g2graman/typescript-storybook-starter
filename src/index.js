@@ -1,1 +1,1 @@
-export * from "./components/widget/widget";
+export * from "./components/stateless-graph/stateless-graph";

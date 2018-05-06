@@ -1,22 +1,22 @@
 import * as React from "react";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import { create } from "react-test-renderer";
 
-import { StateReducer } from "../src/components/widget/state/reducers";
-import configureStore from "../src/components/widget/state/store";
-import SampleWidget from "../src/components/widget/widget";
+import { genDateValue } from "@vx/mock-data";
 
-const store = configureStore({
+// import { StateReducer } from "../src/components/widget/state/reducers";
+// import configureStore from "../src/components/widget/state/store";
+import Graph, { IPoint } from "../src/components/stateless-graph/stateless-graph";
+
+/*const store = configureStore({
         state: null,
     },
     StateReducer,
-);
+);*/
 
 test("Say my name, say my name...", () => {
     const tree1 = create(
-        <Provider store={store}>
-            <SampleWidget name="Michael" />
-        </Provider>,
+        <Graph graphData={genDateValue(20) as IPoint[]} />,
     ).toJSON();
     expect(tree1).toMatchSnapshot();
 });
