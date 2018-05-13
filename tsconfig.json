@@ -15,7 +15,7 @@
     "jsx": "react",
     "sourceMap": true,
     "rootDir": "./",
-    "strict": true,
+    "strict": false,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": false,
     "experimentalDecorators": true,

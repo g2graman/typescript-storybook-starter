@@ -1,1 +1,1 @@
-export * from "./components/stateless-graph/stateless-graph";
+export * from "./components/responsive-graph/stateless-graph";

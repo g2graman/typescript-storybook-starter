@@ -1,13 +1,15 @@
-import { storiesOf, Story } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 
 import * as React from "react";
 // import { Provider as ReduxProvider } from "react-redux";
 
 import { genDateValue } from "@vx/mock-data";
+import { host } from "storybook-host";
 
 // import { StateReducer } from "../src/components/widget/state/reducers";
 // import configureStore from "../src/components/widget/state/store";
-import StatelessGraph, { IPoint } from "../src/components/stateless-graph/stateless-graph";
+import { IPoint } from "../src/components/responsive-graph/graph-data";
+import ResponsiveGraph from "../src/components/responsive-graph/responsive-graph";
 
 /*
 const store = configureStore({
@@ -17,8 +19,16 @@ const store = configureStore({
 );
 */
 
-const storyNameSpace = storiesOf(StatelessGraph.name, module);
+const storyNameSpace = storiesOf(ResponsiveGraph.name, module);
 
 storyNameSpace
     // .addDecorator((getStory) => <ReduxProvider store={store} children={getStory()}/>)
-    .add("Graph", () => <StatelessGraph graphData={genDateValue(10) as IPoint[]}/>);
+    .addDecorator(host({
+        border: false,
+        cropMarks: false,
+        height: "100%",
+        padding: "32px",
+        title: ResponsiveGraph.name,
+        width: "100%",
+    }))
+    .add("Graph", () => <ResponsiveGraph graphData={genDateValue(20) as IPoint[]} />);

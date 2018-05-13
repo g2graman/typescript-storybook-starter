@@ -6,7 +6,8 @@ import { genDateValue } from "@vx/mock-data";
 
 // import { StateReducer } from "../src/components/widget/state/reducers";
 // import configureStore from "../src/components/widget/state/store";
-import Graph, { IPoint } from "../src/components/stateless-graph/stateless-graph";
+import { IPoint } from "../src/components/responsive-graph/graph-data";
+import ResponsiveGraph from "../src/components/responsive-graph/responsive-graph";
 
 /*const store = configureStore({
         state: null,
@@ -16,7 +17,7 @@ import Graph, { IPoint } from "../src/components/stateless-graph/stateless-graph
 
 test("Say my name, say my name...", () => {
     const tree1 = create(
-        <Graph graphData={genDateValue(20) as IPoint[]} />,
+        <ResponsiveGraph graphData={genDateValue(20) as IPoint[]} />,
     ).toJSON();
     expect(tree1).toMatchSnapshot();
 });
