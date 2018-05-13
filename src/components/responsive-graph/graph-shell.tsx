@@ -30,7 +30,7 @@ export interface IGraphShellProps {
     xAxisTickFormat: any;
     yAxisTickFormat: any;
 
-    children?: any[];
+    makeExtra?: any;
 }
 
 const getXScale = (width, graphData: IPoint[]) => scaleTime({
@@ -53,7 +53,7 @@ class GraphShell extends React.Component<IGraphShellProps> {
             graphData,
             xAxisTickFormat,
             yAxisTickFormat,
-            children,
+            makeExtra,
         }: IGraphShellProps = this.props;
 
         const yMax = height - top - bottom;
@@ -62,12 +62,19 @@ class GraphShell extends React.Component<IGraphShellProps> {
         const yScale = getYScale(yMax, graphData as IPoint[]);
 
         const graphProps = {
-            children,
             data: graphData as IPoint[],
+            extent: {
+                x: extent(graphData, getXValue),
+                y: extent(graphData, getYValue),
+            },
             height,
+            makeExtra,
+            margin: { left, top, right, bottom },
             width,
+            xMax,
             xScale,
             xValueGetter: getXValue,
+            yMax,
             yScale,
             yValueGetter: getYValue,
         };

@@ -31,4 +31,28 @@ storyNameSpace
         title: ResponsiveGraph.name,
         width: "100%",
     }))
-    .add("Graph", () => <ResponsiveGraph graphData={genDateValue(20) as IPoint[]} />);
+    .add("Regular Graph", () => <ResponsiveGraph graphData={genDateValue(20) as IPoint[]} />)
+    .add("Graph with upper half coloured", () => {
+        const childFactory = ({ width, yScale, extent: { y: [yMin, yMax] } }) => {
+           const topRegion = yScale(yMax);
+           const bottomRegion = yScale((yMin + yMax) / 2);
+
+           return (bottomRegion - topRegion) > 0
+                ? (
+                   <rect
+                       x={0}
+                       width={width}
+                       y={topRegion}
+                       height={bottomRegion - topRegion}
+                       fill="steelblue"
+                       fillOpacity={0.5}
+                   />
+               ) : null;
+        };
+
+        return (
+            <ResponsiveGraph graphData={genDateValue(20) as IPoint[]} makeExtra={childFactory}>
+                {childFactory}
+            </ResponsiveGraph>
+        );
+    });

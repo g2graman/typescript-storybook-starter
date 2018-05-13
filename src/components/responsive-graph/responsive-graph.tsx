@@ -21,6 +21,8 @@ export interface IStatelessGraphProps {
     // state?: any; // TODO: Specialize type
     // dispatch?: any; // TODO: specialize type
 
+    makeExtra?: any;
+
     graphData: IPoint[];
     tickFormatters?: {
         x?: React.SVGProps<SVGElement>,
@@ -40,6 +42,7 @@ export const defaultTickLabel = (
 );
 
 const ResponsiveGraph: React.SFC<IStatelessGraphProps> = ({
+  makeExtra = null,
   graphData,
   tickFormatters: {
       x: xTickFormat,
@@ -51,10 +54,11 @@ const ResponsiveGraph: React.SFC<IStatelessGraphProps> = ({
 }: IStatelessGraphProps) => (
     <ResponsiveGraphWrapper>
         <GraphShell
-            margin={{left: 32, right: 32, top: 32, bottom: 32}}
+            margin={{left: 32, right: 32, top: 5, bottom: 32}}
             graphData={graphData}
             xAxisTickFormat={xTickFormat}
             yAxisTickFormat={yTickFormat}
+            makeExtra={makeExtra}
         />
     </ResponsiveGraphWrapper>
 );
@@ -65,7 +69,11 @@ ResponsiveGraph.propTypes = {
             date: PropTypes.instanceOf(Date),
             value: PropTypes.number,
         }),
-    ),
+    ).isRequired,
+    tickFormatters: PropTypes.shape({
+        x: PropTypes.instanceOf(SVGElement),
+        y: PropTypes.instanceOf(SVGElement),
+    }),
 };
 
 export default ResponsiveGraph;
